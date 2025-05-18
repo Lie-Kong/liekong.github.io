@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh_CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DN42#01 | 猎空のBlog</title><meta name="author" content="Lie_Kong"><meta name="copyright" content="Lie_Kong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="警告： 本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误&#x2F;错误&#x2F;小白理解 请大佬勿喷，如果能指正出来那就更好啦  如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章    前言  为什么要入坑DN42？ 出于对于未来职业可能的考虑，以及对于技术的好奇，我开始在网上搜索关于BGP&#x2F;Anycast的相关知识，但是出于国际互联网的安全 其实是AS">
+<!DOCTYPE html><html lang="zh_CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DN42#01 | 猎空のBlog</title><meta name="author" content="Lie_Kong"><meta name="copyright" content="Lie_Kong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="警告： 本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误&#x2F;错误&#x2F;小白理解 请大佬勿喷，如果能指正出来那就更好啦  再次警告： 如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章    前言  为什么要入坑DN42？ 出于对于未来职业可能的考虑，以及对于技术的好奇，我开始在网上搜索关于BGP&#x2F;Anycast的相关知识，但是出于国际互联网的安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DN42#01">
 <meta property="og:url" content="https://lie-kong.github.io/2025/05/19/DN42-01/">
 <meta property="og:site_name" content="猎空のBlog">
-<meta property="og:description" content="警告： 本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误&#x2F;错误&#x2F;小白理解 请大佬勿喷，如果能指正出来那就更好啦  如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章    前言  为什么要入坑DN42？ 出于对于未来职业可能的考虑，以及对于技术的好奇，我开始在网上搜索关于BGP&#x2F;Anycast的相关知识，但是出于国际互联网的安全 其实是AS">
+<meta property="og:description" content="警告： 本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误&#x2F;错误&#x2F;小白理解 请大佬勿喷，如果能指正出来那就更好啦  再次警告： 如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章    前言  为什么要入坑DN42？ 出于对于未来职业可能的考虑，以及对于技术的好奇，我开始在网上搜索关于BGP&#x2F;Anycast的相关知识，但是出于国际互联网的安全">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/109675857?v=4">
 <meta property="article:published_time" content="2025-05-18T17:40:00.000Z">
-<meta property="article:modified_time" content="2025-05-18T18:43:51.689Z">
+<meta property="article:modified_time" content="2025-05-18T18:56:26.538Z">
 <meta property="article:author" content="Lie_Kong">
 <meta property="article:tag" content="DN42 Network">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "https://lie-kong.github.io/2025/05/19/DN42-01/",
   "image": "https://avatars.githubusercontent.com/u/109675857?v=4",
   "datePublished": "2025-05-18T17:40:00.000Z",
-  "dateModified": "2025-05-18T18:43:51.689Z",
+  "dateModified": "2025-05-18T18:56:26.538Z",
   "author": [
     {
       "@type": "Person",
@@ -159,10 +159,11 @@
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">猎空のBlog</span></a><a class="nav-page-title" href="/"><span class="site-name">DN42#01</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">DN42#01</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-18T17:40:00.000Z" title="Created 2025-05-19 01:40:00">2025-05-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-18T18:43:51.689Z" title="Updated 2025-05-19 02:43:51">2025-05-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="waline-pageview-count" data-path="/2025/05/19/DN42-01/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/2025/05/19/DN42-01/#post-comment"><span class="waline-comment-count" data-path="/2025/05/19/DN42-01/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="note warning simple"><p><strong>警告：</strong><br />
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">猎空のBlog</span></a><a class="nav-page-title" href="/"><span class="site-name">DN42#01</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">DN42#01</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-18T17:40:00.000Z" title="Created 2025-05-19 01:40:00">2025-05-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-18T18:56:26.538Z" title="Updated 2025-05-19 02:56:26">2025-05-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="waline-pageview-count" data-path="/2025/05/19/DN42-01/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/2025/05/19/DN42-01/#post-comment"><span class="waline-comment-count" data-path="/2025/05/19/DN42-01/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="note warning simple"><p><strong>警告：</strong><br />
 本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误/错误/小白理解 请大佬勿喷，如果能指正出来那就更好啦</p>
 </div>
-<div class="note warning simple"><p>如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章</p>
+<div class="note warning simple"><p><strong>再次警告：</strong><br />
+如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章</p>
 </div>
 <hr />
 <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
@@ -195,15 +196,11 @@
 </ul>
 <p>如果您不具备上述能力，您可能在配置过程中出现问题，给DN42中的其他用户带来麻烦。</p>
 <h2 id="如何注册dn42的as"><a class="markdownIt-Anchor" href="#如何注册dn42的as"></a> 如何注册DN42的AS</h2>
-<blockquote>
-<p>[!NOTE]<br />
-DN42的注册过程比较繁琐，可能需要几天(但是没有注册真实的AS那么麻烦)，提交信息(发PR)，之后可能会被要求修改几次，耐心配合即可。</p>
-</blockquote>
-<blockquote>
-<p>[!IMPORTANT]<br />
-本文信息可能随DN42政策的改变而过时，请优先参考DN42的官方注册流程，此处仅为参考。<br />
+<div class="note info simple"><p>DN42的注册过程比较繁琐，可能需要几天(但是没有注册真实的AS那么麻烦)，提交信息(发PR)，之后可能会被要求修改几次，耐心配合即可。</p>
+</div>
+<div class="note warning simple"><p>本文信息可能随DN42政策的改变而过时，请优先参考DN42的官方注册流程，此处仅为参考。<br />
 <a target="_blank" rel="noopener" href="https://dn42.wiki/howto/Getting-Started">官方Wiki</a></p>
-</blockquote>
+</div>
 <p>注册流程大致如下：</p>
 <ul>
 <li>
@@ -218,10 +215,8 @@ DN42的注册过程比较繁琐，可能需要几天(但是没有注册真实的
 <li>
 <p>去<a target="_blank" rel="noopener" href="https://explorer.burble.com/free">这个网站</a>选择一个你喜欢的IPv4,IPv6以及ASN</p>
 <p>你在 DN42 内能申请的最小地址块是 /29，即 8 个 IP，其中除去第一个 IP 标记地址块，最后一个 IP 作为地址块内广播（broadcast）不可用以外，可以分给 6 个服务器和设备。</p>
-<blockquote>
-<p><strong>提示：</strong><br />
-对于 <strong>「只想简单玩玩」</strong> 的用户，/29 已经够了。</p>
-</blockquote>
+  <div class="note info simple"><p>对于 <strong>「只想简单玩玩」</strong> 的用户，/29 已经够了。</p>
+</div>
 <p>如果你满足下列一项，那么 /29 不够你用，需要申请更大的地址块：</p>
 <ul>
 <li>服务器、设备多，超过了 6 个</li>
@@ -253,10 +248,9 @@ DN42的注册过程比较繁琐，可能需要几天(但是没有注册真实的
 <li>生成完成后，将公钥（Mac 和 Linux 一般在 ~/.ssh 目录下，名为 id_ed25519.pub 或者 id_rsa.pub；Windows 下 puttygen 会直接在窗口上显示公钥）</li>
 <li>此外，DN42 上有些服务会以此处的 SSH 公钥来验证你的身份。</li>
 </ul>
-<blockquote>
-<p>💡 <strong>提示：</strong><br />
+  <div class="note info simple"><p><strong>提示：</strong><br />
 可以阅读 DN42 官方的<a target="_blank" rel="noopener" href="https://dn42.dev/howto/Registry-Authentication">身份认证 Wiki 页面</a>获取更多信息。</p>
-</blockquote>
+</div>
 </li>
 <li>
 <p>想一个<strong>全英文昵称</strong>，可以是你名字的音译/拼音或其他，总之，必须是全英文且为被DN42中的其他人使用</p>
@@ -311,10 +305,9 @@ The third rule of dn42: Allow ip forwarding!</p>
 <p>WireGuard一般配置为点对点连接。我通常是这么配置WireGuard隧道的：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Interface]</span><br><span class="line">PrivateKey = 我的私钥</span><br><span class="line">ListenPort = 监听端口 #通常为对端ASN后5位</span><br><span class="line">Table = off #一定要加</span><br><span class="line">PostUp = ip addr add 本地IPv6 Link-local地址 dev %i</span><br><span class="line">PostUp = ip addr add 本端DN42的ipv6 peer 对端DN42的ipv6 dev %i</span><br><span class="line">PostUp = ip addr add 本端DN42的ipv4 peer 对端DN42的ipv4 dev %i</span><br><span class="line">PostUp = sysctl -w net.ipv6.conf.%i.autoconf=0</span><br><span class="line"></span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = 对端公钥</span><br><span class="line">Endpoint= 对端公网接入点</span><br><span class="line">AllowedIPs = 10.0.0.0/8, 172.20.0.0/14, 172.31.0.0/16, fd00::/8, fe80::/64 #DN42的网络范围</span><br></pre></td></tr></table></figure>
 <p>然后直接用 wg-quick + 隧道名(文件名) 启动隧道就建立了互联。</p>
-<blockquote>
-<p>⚠️ <strong>警告：</strong><br />
+<div class="note warning simple"><p><strong>警告：</strong><br />
 一定要加Table = off，否则wg-quick会给AllowedIPs加上路由，往外连的路由表应该用BGP管理，所以这里不需要帮你添加</p>
-</blockquote>
+</div>
 <h2 id="选择bgp软件"><a class="markdownIt-Anchor" href="#选择bgp软件"></a> 选择BGP软件</h2>
 <p>我只用过Bird v2，而且DN42 Wiki上面也有Bird v2的<a target="_blank" rel="noopener" href="https://dn42.wiki/howto/Bird2">配置文件</a>可以直接抄，所以我推荐Bird v2。</p>
 <p>当然，还有别的可以用，但是我没用过，不做推荐</p>
