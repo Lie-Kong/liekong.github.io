@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DN42#01 | 猎空のBlog</title><meta name="author" content="Lie_Kong"><meta name="copyright" content="Lie_Kong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="2,Network] [!WARNING]本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误&#x2F;错误&#x2F;小白理解 请大佬勿喷，如果能指正出来那就更好啦   [!WARNING]如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章   前言为什么要入坑DN42？出于对于未来职业可能的考虑，以及对于技术的好奇，我开始在网上搜索关于B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DN42#01">
+<meta property="og:url" content="https://lie-kong.github.io/2025/05/18/DN42-01/">
+<meta property="og:site_name" content="猎空のBlog">
+<meta property="og:description" content="2,Network] [!WARNING]本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误&#x2F;错误&#x2F;小白理解 请大佬勿喷，如果能指正出来那就更好啦   [!WARNING]如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章   前言为什么要入坑DN42？出于对于未来职业可能的考虑，以及对于技术的好奇，我开始在网上搜索关于B">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/109675857?v=4">
+<meta property="article:published_time" content="2025-05-18T09:12:53.000Z">
+<meta property="article:modified_time" content="2025-05-18T17:41:04.930Z">
+<meta property="article:author" content="Lie_Kong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/109675857?v=4"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "DN42#01",
+  "url": "https://lie-kong.github.io/2025/05/18/DN42-01/",
+  "image": "https://avatars.githubusercontent.com/u/109675857?v=4",
+  "datePublished": "2025-05-18T09:12:53.000Z",
+  "dateModified": "2025-05-18T17:41:04.930Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Lie_Kong",
+      "url": "https://lie-kong.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lie-kong.github.io/2025/05/18/DN42-01/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'DN42#01',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">猎空のBlog</span></a><a class="nav-page-title" href="/"><span class="site-name">DN42#01</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">DN42#01</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-18T09:12:53.000Z" title="Created 2025-05-18 17:12:53">2025-05-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-18T17:41:04.930Z" title="Updated 2025-05-19 01:41:04">2025-05-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="waline-pageview-count" data-path="/2025/05/18/DN42-01/"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/2025/05/18/DN42-01/#post-comment"><span class="waline-comment-count" data-path="/2025/05/18/DN42-01/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="2-Network"><a href="#2-Network" class="headerlink" title="2,Network]"></a>2,Network]</h2><blockquote>
+<p>[!WARNING]<br>本人只是一名高三学生，在此之前对于BGP等技术一无所知，因此，本文可能包含但不限于 笔误&#x2F;错误&#x2F;小白理解 请大佬勿喷，如果能指正出来那就更好啦</p>
+</blockquote>
+<blockquote>
+<p>[!WARNING]<br>如果您能接受的话，可以继续看下去，如果不能接受，建议现在就关闭此文章</p>
+</blockquote>
+<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="为什么要入坑DN42？"><a href="#为什么要入坑DN42？" class="headerlink" title="为什么要入坑DN42？"></a>为什么要入坑DN42？</h2><p>出于对于未来职业可能的考虑，以及对于技术的好奇，我开始在网上搜索关于BGP&#x2F;Anycast的相关知识，但是出于国际互联网的安全 <del>其实是ASN&#x2F;服务器太贵了</del> ，绝定先入坑DN42练好技术再上真货 <del>也可能不上了就</del></p>
+<h2 id="什么是DN42？"><a href="#什么是DN42？" class="headerlink" title="什么是DN42？"></a>什么是DN42？</h2><blockquote>
+<p>dn42是一个大型的动态<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Virtual_private_network">VPN</a>，它采用了互联网技术（<a target="_blank" rel="noopener" href="https://.wikipedia.org/wiki/Bgp">BGP</a>、whois数据库、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Domain_Name_System">DNS</a>等）。参与者使用网络隧道（<a target="_blank" rel="noopener" href="https://dn42.wiki/howto/GRE-on-FreeBSD.html">GRE</a>、<a target="_blank" rel="noopener" href="https://dn42.wiki/howto/openvpn.html">OpenVPN</a>、<a target="_blank" rel="noopener" href="https://dn42.wiki/howto/wireguard.html">WireGuard</a>、<a target="_blank" rel="noopener" href="https://dn42.wiki/howto/tinc.html">Tinc</a>、<a target="_blank" rel="noopener" href="https://dn42.wiki/howto/IPsec-with-PublicKeys.html">IPsec</a>）相互连接，并通过边界网关协议（Border Gateway Protocol）交换路由。网络地址分配在 172.20.0.0&#x2F;14 范围内，并使用私有AS号（参见<a target="_blank" rel="noopener" href="https://dn42.wiki/services/Whois.html">registry</a>），以及使用ULA范围（fd00::&#x2F;8）的IPv6地址。</p>
+<p>——引用自 <a target="_blank" rel="noopener" href="https://dn42.wiki/Home">DN42 Wiki</a></p>
+</blockquote>
+<p>DN42的初衷是为互联网工作者提供一个用于模拟真实网络环境的沙盒，因此使用 DN42 的门槛比较高。就像在真实互联网中一样，你要扮演一个 ISP（互联网服务提供商），注册自己的个人信息，ASN 号码，IPv4 和 IPv6 的地址池，并且使用 BGP 在自己的服务器上广播它们。你还要和其它的用户联系，和他们做 Peering（对接），一步步进入完整的 DN42 网络。</p>
+<h2 id="你能在DN42里干什么？"><a href="#你能在DN42里干什么？" class="headerlink" title="你能在DN42里干什么？"></a>你能在DN42里干什么？</h2><blockquote>
+<p>Do whatever is fun and interesting for you<br>做任何对你来说有趣和有趣的事情</p>
+<p>—— burble</p>
+</blockquote>
+<h1 id="加入DN42！"><a href="#加入DN42！" class="headerlink" title="加入DN42！"></a>加入DN42！</h1><h2 id="加入DN42的前置要求"><a href="#加入DN42的前置要求" class="headerlink" title="加入DN42的前置要求"></a>加入DN42的前置要求</h2><ul>
+<li><p>你至少有一个 24&#x2F;7 全天候运行的路由器。任何 Linux 或 BSD 设备都可以变成路由器。如果你的家用路由器运行的是 OpenWRT，你可以考虑用它来连接 dn42。</p>
+</li>
+<li><p>您的路由器能够通过互联网建立网络隧道（Wireguard、GRE、OpenVPN、IPSec、Tinc 等）。请注意，您的网络运营商可能会过滤此类流量，例如在学校或大学。</p>
+</li>
+<li><p>您通常对网络和路由有一定了解（例如，您听说过 BGP、IGP、转发，并且愿意配置 BGP 路由器，例如 FRR 或 Bird）</p>
+</li>
+</ul>
+<p>如果您不具备上述能力，您可能在配置过程中出现问题，给DN42中的其他用户带来麻烦。</p>
+<h2 id="如何注册DN42的AS"><a href="#如何注册DN42的AS" class="headerlink" title="如何注册DN42的AS"></a>如何注册DN42的AS</h2><blockquote>
+<p>[!NOTE]<br>DN42的注册过程比较繁琐，可能需要几天(但是没有注册真实的AS那么麻烦)，提交信息(发PR)，之后可能会被要求修改几次，耐心配合即可。</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]<br>本文信息可能随DN42政策的改变而过时，请优先参考DN42的官方注册流程，此处仅为参考。<br><a target="_blank" rel="noopener" href="https://dn42.wiki/howto/Getting-Started">官方Wiki</a></p>
+</blockquote>
+<p>注册流程大致如下：</p>
+<ul>
+<li><p>在<a target="_blank" rel="noopener" href="https://git.dn42.dev/">这里</a>注册一个Git账户。这相当于 DN42 内的 GitHub，账户信息就存放在其中的一个仓库里。</p>
+</li>
+<li><p>Frok<a target="_blank" rel="noopener" href="https://git.dn42.dev/dn42/registry">官方仓库</a></p>
+</li>
+<li><p>进入你账户里Frok的那个仓库，把它 Clone 下来。</p>
+</li>
+<li><p>去<a target="_blank" rel="noopener" href="https://explorer.burble.com/free">这个网站</a>选择一个你喜欢的IPv4,IPv6以及ASN</p>
+<p>  你在 DN42 内能申请的最小地址块是 &#x2F;29，即 8 个 IP，其中除去第一个 IP 标记地址块，最后一个 IP 作为地址块内广播（broadcast）不可用以外，可以分给 6 个服务器和设备。</p>
+<blockquote>
+<p>[!TIP]<br>对于 <strong>「只想简单玩玩」</strong> 的用户，&#x2F;29 已经够了。</p>
+</blockquote>
+<p>  如果你满足下列一项，那么 &#x2F;29 不够你用，需要申请更大的地址块：</p>
+<ul>
+<li>服务器、设备多，超过了 6 个</li>
+<li>你准备自己配置些 Anycast 之类的，需要占用更多的 IP</li>
+<li>你使用的一些设备（例如 Mikrotik 路由器），在 Peering（对接）阶段建立隧道时，只能使用 &#x2F;30 地址块。<ul>
+<li>在后续 Peering（对接）阶段，Linux 服务器可以配置单个 IP 到单个 IP 的隧道。同时，我这端的一个地址可以同时用在多个隧道中，这意味着我可以同时设置任意多的隧道，与任意多的人 Peer，而不需要额外的 IP。</li>
+<li>但如果你的设备要求使用 &#x2F;30 地址，意味着一个隧道就需要占用 4 个 IP 地址，并且你这端的地址无法重复使用，比较浪费。</li>
+<li>此时你需要预留较多的地址，因为 DN42 内物理路由器较少见，与你对接的另一位一般也没有预留这么多地址，这个 &#x2F;30 地址块需要由你出。</li>
+</ul>
+</li>
+</ul>
+<p>  DN42 一般建议申请 &#x2F;27，你能直接申请的最大地址块是 &#x2F;26。</p>
+</li>
+<li><p>生成一个 GPG 公钥 或 SSH 公钥(群友推荐SSH)</p>
+<p>  你<strong>必须</strong>在 GPG 公钥和 SSH 公钥中添加至少一种。<br>  如果你准备添加 GPG 公钥：</p>
+<ul>
+<li>首先你需要创建一个（如果你之前没有的话），例如参照 <a target="_blank" rel="noopener" href="https://docs.github.com/cn/free-pro-team@latest/github/authenticating-to-github/generating-a-new-gpg-key">GitHub 的这份教程</a>操作。后续提交过程也会用到这个公钥。</li>
+<li>你还需要将你的 GPG 公钥上传到公共查询服务器，称为 Keyserver。</li>
+<li>上传步骤请参考<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/07/gpg.html">阮一峰的这份教程</a>，并将 keyserver 参数替换成 hkp:&#x2F;&#x2F;keyserver.ubuntu.com，例如：<code>gpg --keyserver hkp://keyserver.ubuntu.com --send-key [密钥ID]</code></li>
+</ul>
+<p>  如果你准备添加 SSH 公钥:</p>
+<ul>
+<li>首先你需要创建一个（如果你之前没有的话）。</li>
+<li>Mac 和 Linux 一般运行 ssh-keygen -t ed25519 即可，但如果你的 SSH 版本特别老不支持 ED25519 密钥，也可以使用 RSA，ssh-keygen -t rsa</li>
+<li>Windows 可以下载 PuTTY，使用其中的 puttygen 工具生成。</li>
+<li>生成完成后，将公钥（Mac 和 Linux 一般在 ~&#x2F;.ssh 目录下，名为 id_ed25519.pub 或者 id_rsa.pub；Windows 下 puttygen 会直接在窗口上显示公钥）</li>
+<li>此外，DN42 上有些服务会以此处的 SSH 公钥来验证你的身份。</li>
+</ul>
+<blockquote>
+<p>[!TIP]<br>可以阅读 DN42 官方的<a target="_blank" rel="noopener" href="https://dn42.dev/howto/Registry-Authentication">身份认证 Wiki 页面</a>获取更多信息。</p>
+</blockquote>
+</li>
+<li><p>想一个<strong>全英文昵称</strong>，可以是你名字的音译&#x2F;拼音或其他，总之，必须是全英文且为被DN42中的其他人使用</p>
+</li>
+<li><p>将刚刚的所有信息整合，你有了：Nickname,ASN,IP,IPv6,Key(GPG or SSH)，计算出你IPv4的起始与终止IP，你也可以用<a target="_blank" rel="noopener" href="https://ipjisuanqi.com/">IP地址计算器</a>算出StartIP,EndIP</p>
+</li>
+<li><p>使用一个你喜欢且能联系到你的邮箱记作 EMAIL,选择一个你喜欢的且能联系到你的联系方式记作 contact</p>
+</li>
+<li><p>假设你已经进入本地clone的目录中，将下面的内容复制到记事本中，使用Ctrl+F全字替换为你自己的信息，然后在Terminal中粘贴。如果不想，也可以将你的信息写入系统变量中，然后直接在Terminal中粘贴，并进行少量修改</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">Nickname 昵称  </span><br><span class="line">ASN 此处ASN为AS后的数字  </span><br><span class="line">IP  </span><br><span class="line">StartIP 起始IP  </span><br><span class="line">EndIP 终止IP  </span><br><span class="line">IPv6 此处iPv6为::/48的前的内容  </span><br><span class="line">EMAIL 可联系到的邮箱  </span><br><span class="line">contact 联系方式  </span><br><span class="line">Key : GPG or SSH  </span><br><span class="line"></span><br><span class="line">echo &#x27;  </span><br><span class="line">mntner:             $&#123;Nickname&#125;-MNT</span><br><span class="line">admin-c:            $&#123;Nickname&#125;-DN42</span><br><span class="line">tech-c:             $&#123;Nickname&#125;-DN42</span><br><span class="line">mnt-by:             $&#123;Nickname&#125;-MNT</span><br><span class="line">source:             DN42</span><br><span class="line">auth:               $&#123;Key&#125;</span><br><span class="line">remarks:            peer with me at $&#123;EMAIL&#125;&#x27;&gt;data/mntner/$&#123;Nickname&#125;-MNT</span><br><span class="line"></span><br><span class="line">echo &#x27;</span><br><span class="line">person:             $&#123;Nickname&#125;</span><br><span class="line">e-mail:             $&#123;EMAIL&#125;</span><br><span class="line">contact:            $&#123;contact&#125;</span><br><span class="line">nic-hdl:            $&#123;Nickname&#125;-DN42</span><br><span class="line">mnt-by:             $&#123;Nickname&#125;-MNT</span><br><span class="line">source:             DN42&#x27;&gt;data/person/$&#123;Nickname&#125;-DN42</span><br><span class="line"></span><br><span class="line">echo &#x27;</span><br><span class="line">aut-num:            $&#123;ASN&#125;</span><br><span class="line">as-name:            $&#123;Nickname&#125;-AS</span><br><span class="line">descr:              Peer with me at $&#123;EMAIL&#125;</span><br><span class="line">admin-c:            $&#123;Nickname&#125;-DN42</span><br><span class="line">tech-c:             $&#123;Nickname&#125;-DN42</span><br><span class="line">mnt-by:             $&#123;Nickname&#125;-MNT</span><br><span class="line">source:             DN42&#x27;&gt;data/aut-num/AS$&#123;ASN&#125;</span><br><span class="line"></span><br><span class="line">echo &#x27;</span><br><span class="line">inetnum:            $&#123;StartIP&#125; - $&#123;EndIP&#125;</span><br><span class="line">netname:            $&#123;Nickname&#125;-IPV4</span><br><span class="line">remarks:            Peer with me at $&#123;EMAIL&#125;</span><br><span class="line">descr:              Peer with me at $&#123;EMAIL&#125;</span><br><span class="line">country:            CN</span><br><span class="line">admin-c:            $&#123;Nickname&#125;-DN42</span><br><span class="line">tech-c:             $&#123;Nickname&#125;-DN42</span><br><span class="line">mnt-by:             $&#123;Nickname&#125;-MNT</span><br><span class="line">status:             ASSIGNED</span><br><span class="line">cidr:               $&#123;IP&#125;</span><br><span class="line">source:             DN42&#x27;&gt;data/inetnum/$&#123;IP&#125; #此处需要将IP中的 / 替换为 _</span><br><span class="line"></span><br><span class="line">echo &#x27;</span><br><span class="line">route:              $&#123;IP&#125;</span><br><span class="line">descr:              Peer with me at $&#123;EMAIL&#125;</span><br><span class="line">origin:             $&#123;ASN&#125;</span><br><span class="line">mnt-by:             $&#123;Nickname&#125;-MNT</span><br><span class="line">source:             DN42&#x27;&gt;data/route/$&#123;IP&#125; #此处需要将IP中的 / 替换为 _</span><br><span class="line"></span><br><span class="line">echo &#x27;</span><br><span class="line">inet6num:           $&#123;IPv6&#125;:0000:0000:0000:0000:0000 - $&#123;IPv6&#125;:ffff:ffff:ffff:ffff:ffff</span><br><span class="line">netname:            $&#123;Nickname&#125;-IPV6</span><br><span class="line">descr:              Peer with me at $&#123;EMAIL&#125;</span><br><span class="line">country:            CN</span><br><span class="line">admin-c:            $&#123;Nickname&#125;-DN42</span><br><span class="line">tech-c:             $&#123;Nickname&#125;-DN42</span><br><span class="line">mnt-by:             $&#123;Nickname&#125;-MNT</span><br><span class="line">status:             ASSIGNED</span><br><span class="line">cidr:               $&#123;IPv6&#125;::/48</span><br><span class="line">source:             DN42&#x27;&gt;data/inet6num/&#123;IPv6&#125;::_48</span><br><span class="line"></span><br><span class="line">echo &#x27;</span><br><span class="line">route6:             $&#123;IPv6&#125;::/48</span><br><span class="line">descr:              Peer with me at $&#123;EMAIL&#125;</span><br><span class="line">origin:             $&#123;ASN&#125;</span><br><span class="line">mnt-by:             $&#123;Nickname&#125;-MNT</span><br><span class="line">source:             DN42&#x27;&gt;data/route6/&#123;IPv6&#125;::_48</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>现在，您建立完了所有需要的文件，首先在仓库根目录运行<code>./fmt-my-stuff 你的mntner名字</code>格式化您的所有文件</li>
+<li>然后<code>git add .</code>和<code>git commit -S</code>来签名commit您的更改</li>
+<li>如果您已经commit了多次，注意DN42的PR只接受单个commit，所以需要运行<code>./squash-my-commits -S</code>来扁平化您的commit</li>
+<li>执行<code>git push -f</code>将更改推送至服务器，然后去网页上创建PR<ul>
+<li>一次注册&#x2F;信息修改只用发一个PR</li>
+<li>如果被要求修改，改完并squash了之后直接<code>git push -f</code>就行，不用关闭并开新的PR</li>
+<li>发PR用英文</li>
+</ul>
+</li>
+</ul>
+<p>在您的PR被合并之后，您就拥有了自己的AS和地址块，接下来就可以去找人Peer了</p>
+<h2 id="如何与别人Peer"><a href="#如何与别人Peer" class="headerlink" title="如何与别人Peer"></a>如何与别人Peer</h2><p>由于DN42是一个去中心化的网络，因此并没有一个中央路由可以让你直接接入，相反，你需要寻找其他DN42上的节点，建立隧道连接和BGP会话，从而建立Peering关系</p>
+<p>您可以</p>
+<ul>
+<li>使用<a target="_blank" rel="noopener" href="https://dn42.us/peers">DN42 Peerfinder</a></li>
+<li>去<a target="_blank" rel="noopener" href="https://wiki.dn42.us/services/IRC">DN42的IRC频道</a></li>
+<li>去<a target="_blank" rel="noopener" href="https://t.me/Dn42Chat">非官方的TG群</a></li>
+</ul>
+<p>找人peer，或者直接找我</p>
+<p>注意，您可以（并且建议）找多人进行peer，以降低网络中心度增加网络稳定性。</p>
+<p>找几个离你节点近延迟小的节点，然后看下面</p>
+<h2 id="重要的系统配置"><a href="#重要的系统配置" class="headerlink" title="重要的系统配置"></a>重要的系统配置</h2><p>根据官方Wiki</p>
+<blockquote>
+<p>The first rule of dn42: Always disable <code>rp_filter</code>.<br>The second rule of dn42: Always disable <code>rp_filter</code>.<br>The third rule of dn42: Allow ip forwarding!  </p>
+</blockquote>
+<p>一定关掉<code>rp_filter</code>并开启<code>IP forwarding</code>，具体执行下面的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;net.ipv4.conf.default.rp_filter=2&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.conf.all.rp_filter=2&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.ip_forward=1&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv6.conf.default.forwarding=1&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv6.conf.all.forwarding=1&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
+
+<p>然后一定关掉UFW之类的自动配置iptables的东西，以免出现玄学问题</p>
+<h2 id="选择隧道软件"><a href="#选择隧道软件" class="headerlink" title="选择隧道软件"></a>选择隧道软件</h2><p>不同Peer之间一般是没有网线直接拉上的，互联基本上依靠隧道。现在DN42社区一般喜欢使用WireGuard和OpenVPN，我倾向于使用WireGuard。</p>
+<p>WireGuard一般配置为点对点连接。我通常是这么配置WireGuard隧道的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Interface]</span><br><span class="line">PrivateKey = 我的私钥</span><br><span class="line">ListenPort = 监听端口 #通常为对端ASN后5位</span><br><span class="line">Table = off #一定要加</span><br><span class="line">PostUp = ip addr add 本地IPv6 Link-local地址 dev %i</span><br><span class="line">PostUp = ip addr add 本端DN42的ipv6 peer 对端DN42的ipv6 dev %i</span><br><span class="line">PostUp = ip addr add 本端DN42的ipv4 peer 对端DN42的ipv4 dev %i</span><br><span class="line">PostUp = sysctl -w net.ipv6.conf.%i.autoconf=0</span><br><span class="line"></span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = 对端公钥</span><br><span class="line">Endpoint= 对端公网接入点</span><br><span class="line">AllowedIPs = 10.0.0.0/8, 172.20.0.0/14, 172.31.0.0/16, fd00::/8, fe80::/64 #DN42的网络范围</span><br></pre></td></tr></table></figure>
+
+<p>然后直接用 wg-quick + 隧道名(文件名) 启动隧道就建立了互联。</p>
+<blockquote>
+<p>[!WARNING]<br>一定要加Table &#x3D; off，否则wg-quick会给AllowedIPs加上路由，往外连的路由表应该用BGP管理，所以这里不需要帮你添加</p>
+</blockquote>
+<h2 id="选择BGP软件"><a href="#选择BGP软件" class="headerlink" title="选择BGP软件"></a>选择BGP软件</h2><p>我只用过Bird v2，而且DN42 Wiki上面也有Bird v2的<a target="_blank" rel="noopener" href="https://dn42.wiki/howto/Bird2">配置文件</a>可以直接抄，所以我推荐Bird v2。</p>
+<p>当然，还有别的可以用，但是我没用过，不做推荐</p>
+<h2 id="内网配置"><a href="#内网配置" class="headerlink" title="内网配置"></a>内网配置</h2><p>个人建议用wg等隧道软件在每两个节点之间建立一条点对点隧道，即每个节点都能直接连接到其余所有节点，配IBGP。OSPF&#x2F;Babel没配懂，所以不做说明。</p>
+<h3 id="IBGP"><a href="#IBGP" class="headerlink" title="IBGP"></a>IBGP</h3><p>如果你已经在多台服务器上使用WireGuard搭建了点对点隧道，那么你的服务器已经互联了，但是你并没有宣告外部这个服务器能互联到你 AS 内的其他服务器，所以你需要创建 IBGP 来宣告</p>
+<p>由于本人是小白，本文只讲述最简单的服务器两两之间建立 BGP 连接的方式，如果您需要更高级 &#x2F; 更方便的方式，可以查阅<a target="_blank" rel="noopener" href="https://lantian.pub/article/modify-website/dn42-experimental-network-2020.lantian/#%E6%90%AD%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%86%85%E7%BD%91">这里</a></p>
+<p>假设你已经Copy了官方Wiki的Bird2配置，在 <code>/etc/bird/bird.conf</code>插入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">template bgp IBGP &#123;</span><br><span class="line">    local as OWNAS;</span><br><span class="line">    direct;</span><br><span class="line">    ipv4 &#123;</span><br><span class="line">        next hop self;</span><br><span class="line">        import all;</span><br><span class="line">        export all;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    ipv6 &#123;</span><br><span class="line">        next hop self;</span><br><span class="line">        import all;</span><br><span class="line">        export all;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">protocol bgp ibgp_node1 from IBGP &#123;</span><br><span class="line">  neighbor 你的另一台服务器的ip as OWNAS;</span><br><span class="line">&#125;;</span><br><span class="line">protocol bgp ibgp_node2 from IBGP &#123;</span><br><span class="line">  neighbor 你的再另一台服务器的ip as OWNAS;</span><br><span class="line">&#125;;</span><br><span class="line">#以此类推</span><br></pre></td></tr></table></figure>
+
+<p>import all; 和 export all; 只是本文为了<strong>简单</strong>，建议学习<a target="_blank" rel="noopener" href="https://soha.moe/post/bird-bgp-kickstart.html">《BIRD 与 BGP 的新手开场》</a> 后自己写 filter 更保险</p>
+<p>然后您需要将此配置文件添加到每个服务器上</p>
+<p>然后输入 birdc c，重载配置，等待几分钟应该就可以在外部 ping 到你内部了（如果你已经有服务器和别人 peer 的话）<br><img src="https://pic.lie-kong.top/i/2025/05/19/682a171c9f658.webp" alt="1000051812.webp"></p>
+<h2 id="进行Peer"><a href="#进行Peer" class="headerlink" title="进行Peer"></a>进行Peer</h2><p>BGP软件配好了，内网也配好了，现在就可以开始做Peer了。（当然，你应该先测测内网通不通）<br>与他人建立WireGuard隧道后，在&#x2F;etc&#x2F;bird&#x2F;peers&#x2F; 中新建文件，写入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">protocol bgp 线路名称 from dnpeers &#123;</span><br><span class="line">    neighbor 对方的本地ipv6链路 % &#x27;WireGuard隧道名称&#x27; as 对方ASN;</span><br><span class="line">    direct;</span><br><span class="line">    ipv4 &#123; extended next hop on; &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>该配置使用了MP-BGP over link-local</p>
+<h2 id="接入完成"><a href="#接入完成" class="headerlink" title="接入完成"></a>接入完成</h2><p>完成上述操作之后，等到对方也将您的配置推荐进bird2后，您就成功的接入了DN42网络。您可以开始愉快的Ping了 <del>(其实DN42里面也有不少服务的)</del>。您可以接着申请域名、搭建权威DNS服务器和DNS反查服务器，在DN42里面搭建博客或者整活了🥰</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>感谢以下文章对本小白踏入 DN42 提供了巨大的帮助！<br><a target="_blank" rel="noopener" href="https://lantian.pub/article/modify-website/dn42-experimental-network-2020.lantian/">DN42 实验网络介绍（2020 版）</a><br><a target="_blank" rel="noopener" href="https://soha.moe/post/bird-bgp-kickstart.html">BIRD 与 BGP 的新手开场</a><br><a target="_blank" rel="noopener" href="https://jlu5.com/blog/dn42-multiple-servers-ibgp-igps">Multiple servers on dn42: iBGP and IGPs</a><br><a target="_blank" rel="noopener" href="https://milu.ink/313.html">萌新入坑 DN42 之 —— 多服务器互联</a>  </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lie-kong.github.io">Lie_Kong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lie-kong.github.io/2025/05/18/DN42-01/">https://lie-kong.github.io/2025/05/18/DN42-01/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://avatars.githubusercontent.com/u/109675857?v=4" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/05/18/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Hello World</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/109675857?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Lie_Kong</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Lie-Kong"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Network"><span class="toc-number">1.</span> <span class="toc-text">2,Network]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number"></span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%85%A5%E5%9D%91DN42%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么要入坑DN42？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFDN42%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">什么是DN42？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E8%83%BD%E5%9C%A8DN42%E9%87%8C%E5%B9%B2%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">你能在DN42里干什么？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5DN42%EF%BC%81"><span class="toc-number"></span> <span class="toc-text">加入DN42！</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5DN42%E7%9A%84%E5%89%8D%E7%BD%AE%E8%A6%81%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">加入DN42的前置要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%B3%A8%E5%86%8CDN42%E7%9A%84AS"><span class="toc-number">2.</span> <span class="toc-text">如何注册DN42的AS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%B8%8E%E5%88%AB%E4%BA%BAPeer"><span class="toc-number">3.</span> <span class="toc-text">如何与别人Peer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">重要的系统配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%9A%A7%E9%81%93%E8%BD%AF%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">选择隧道软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9BGP%E8%BD%AF%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">选择BGP软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E9%85%8D%E7%BD%AE"><span class="toc-number">7.</span> <span class="toc-text">内网配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IBGP"><span class="toc-number">7.1.</span> <span class="toc-text">IBGP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8CPeer"><span class="toc-number">8.</span> <span class="toc-text">进行Peer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E5%AE%8C%E6%88%90"><span class="toc-number">9.</span> <span class="toc-text">接入完成</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number"></span> <span class="toc-text">参考文献</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/18/DN42-01/" title="DN42#01">DN42#01</a><time datetime="2025-05-18T09:12:53.000Z" title="Created 2025-05-18 17:12:53">2025-05-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/18/hello-world/" title="Hello World">Hello World</a><time datetime="2025-05-17T16:25:48.197Z" title="Created 2025-05-18 00:25:48">2025-05-18</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Lie_Kong</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://waline.lie-kong.top',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
