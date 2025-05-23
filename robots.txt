@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://blog.lie-kong.top/sitemap.xml
